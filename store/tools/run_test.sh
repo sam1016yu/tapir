@@ -60,6 +60,9 @@ echo "Mode: $mode"
 # # Generate keys to be used in the experiment.
 # echo "Generating random keys.."
 # python key_generator.py $nkeys > keys
+# scp keys miaoyu@10.10.1.1:~/tapir/store/tools/
+# scp keys miaoyu@10.10.1.2:~/tapir/store/tools/
+# scp keys miaoyu@10.10.1.3:~/tapir/store/tools/
 
 
 
