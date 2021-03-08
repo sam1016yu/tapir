@@ -91,26 +91,26 @@ cd $srcdir/store/tools
 
 
 
-# Wait for all clients to exit
-echo "Waiting for client(s) to exit"
-for host in ${clients[@]}
-do
-   $srcdir/store/tools/wait_client.sh $client
-done
+# # Wait for all clients to exit
+# echo "Waiting for client(s) to exit"
+# for host in ${clients[@]}
+# do
+#    $srcdir/store/tools/wait_client.sh "java"
+# done
 
 
-# Kill all replicas
-echo "Cleaning up"
-$srcdir/store/tools/stop_replica.sh $srcdir/store/tools/shard.tss.config > /dev/null 2>&1
-for ((i=0; i<$nshard; i++))
-do
-  $srcdir/store/tools/stop_replica.sh $srcdir/store/tools/shard$i.config > /dev/null 2>&1
-done
+# # Kill all replicas
+# echo "Cleaning up"
+# $srcdir/store/tools/stop_replica.sh $srcdir/store/tools/shard.tss.config > /dev/null 2>&1
+# for ((i=0; i<$nshard; i++))
+# do
+#   $srcdir/store/tools/stop_replica.sh $srcdir/store/tools/shard$i.config > /dev/null 2>&1
+# done
 
 
-# Process logs
-echo "Processing logs"
-cat $logdir/client.*.log | sort -g -k 3 > $logdir/client.log
-rm -f $logdir/client.*.log
+# # Process logs
+# echo "Processing logs"
+# cat $logdir/client.*.log | sort -g -k 3 > $logdir/client.log
+# rm -f $logdir/client.*.log
 
-python $srcdir/store/tools/process_logs.py $logdir/client.log $rtime
+# python $srcdir/store/tools/process_logs.py $logdir/client.log $rtime
