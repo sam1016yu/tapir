@@ -82,7 +82,7 @@ sleep 2
 # Run the clients
 echo "Running the client(s)"
 cd $srcdir/ycsb-t
-run-tapir.sh
+./run-tapir.sh
 cd $srcdir/store/tools
   # $srcdir/store/tools/start_client.sh "$srcdir/store/benchmark/$client \
   # -c $srcdir/store/tools/shard -N $nshard -f $srcdir/store/tools/keys \
