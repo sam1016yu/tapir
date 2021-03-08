@@ -57,9 +57,11 @@ echo "Store: $store"
 echo "Mode: $mode"
 
 
-# Generate keys to be used in the experiment.
-echo "Generating random keys.."
-python key_generator.py $nkeys > keys
+# # Generate keys to be used in the experiment.
+# echo "Generating random keys.."
+# python key_generator.py $nkeys > keys
+
+
 
 
 # Start all replicas and timestamp servers
