@@ -84,7 +84,7 @@ echo "Running the client(s)"
 count=0
 for host in ${clients[@]}
 do
-  ssh $host "$srcdir/store/tools/start_client.sh \"$srcdir/store/benchmark/$client \
+  $host "$srcdir/store/tools/start_client.sh \"$srcdir/store/benchmark/$client \
   -c $srcdir/store/tools/shard -N $nshard -f $srcdir/store/tools/keys \
   -d $rtime -l $tlen -w $wper -k $nkeys -m $mode -e $err -s $skew -z $zalpha\" \
   $count $nclient $logdir"
