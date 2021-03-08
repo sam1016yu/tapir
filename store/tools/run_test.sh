@@ -81,15 +81,14 @@ sleep 2
 
 # Run the clients
 echo "Running the client(s)"
-count=0
-for host in ${clients[@]}
-do
-  $srcdir/store/tools/start_client.sh "$srcdir/store/benchmark/$client \
-  -c $srcdir/store/tools/shard -N $nshard -f $srcdir/store/tools/keys \
-  -d $rtime -l $tlen -w $wper -k $nkeys -m $mode -e $err -s $skew -z $zalpha"  $count $nclient $logdir
+cd $srcdir/ycsb-t
+run-tapir.sh
+cd $srcdir/store/tools
+  # $srcdir/store/tools/start_client.sh "$srcdir/store/benchmark/$client \
+  # -c $srcdir/store/tools/shard -N $nshard -f $srcdir/store/tools/keys \
+  # -d $rtime -l $tlen -w $wper -k $nkeys -m $mode -e $err -s $skew -z $zalpha"  $count $nclient $logdir
 
-  let count=$count+$nclient
-done
+
 
 
 # Wait for all clients to exit
