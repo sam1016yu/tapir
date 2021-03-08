@@ -31,7 +31,7 @@ mode="txn-l"            # Mode for storage system.
 
 nshard=1     # number of shards
 nclient=1    # number of clients to run (per machine)
-nkeys=1000000 # number of keys to use
+nkeys=1000 # number of keys to use
 rtime=10     # duration to run
 
 tlen=2       # transaction length
