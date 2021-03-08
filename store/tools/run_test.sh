@@ -96,7 +96,7 @@ done
 echo "Waiting for client(s) to exit"
 for host in ${clients[@]}
 do
-  ssh $host "$srcdir/store/tools/wait_client.sh $client"
+   $srcdir/store/tools/wait_client.sh $client
 done
 
 
