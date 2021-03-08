@@ -1,11 +1,11 @@
 #! /usr/bin/env bash
 
-# Copy the shared library to libs folder.
-mkdir -p libs
-cp ../libtapir/libtapir.so ./libs/
+# # Copy the shared library to libs folder.
+# mkdir -p libs
+# cp ../libtapir/libtapir.so ./libs/
 
-# Make the tapir binding using maven
-mvn clean package
+# # Make the tapir binding using maven
+# mvn clean package
 
 # Load the records in Tapir
 java -cp tapir-interface/target/tapir-interface-0.1.4.jar:core/target/core-0.1.4.jar:tapir/target/tapir-binding-0.1.4.jar:javacpp/target/javacpp.jar \
