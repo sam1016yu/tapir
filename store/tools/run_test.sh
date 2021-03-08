@@ -31,7 +31,7 @@ mode="txn-l"            # Mode for storage system.
 
 nshard=1     # number of shards
 nclient=1    # number of clients to run (per machine)
-nkeys=10000 # number of keys to use
+nkeys=1000000 # number of keys to use
 rtime=10     # duration to run
 
 tlen=2       # transaction length
@@ -84,10 +84,9 @@ echo "Running the client(s)"
 count=0
 for host in ${clients[@]}
 do
-  $host "$srcdir/store/tools/start_client.sh \"$srcdir/store/benchmark/$client \
+  $srcdir/store/tools/start_client.sh "$srcdir/store/benchmark/$client \
   -c $srcdir/store/tools/shard -N $nshard -f $srcdir/store/tools/keys \
-  -d $rtime -l $tlen -w $wper -k $nkeys -m $mode -e $err -s $skew -z $zalpha\" \
-  $count $nclient $logdir"
+  -d $rtime -l $tlen -w $wper -k $nkeys -m $mode -e $err -s $skew -z $zalpha"  $count $nclient $logdir
 
   let count=$count+$nclient
 done
